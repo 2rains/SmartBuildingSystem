@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Co2 {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  roomNum Int
+  time    Int
+  value   Float
+}
+
+model Humi {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  roomNum Int
+  time    Int
+  value   Float
+}
+
+model Light {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  roomNum Int
+  time    Int
+  value   Float
+}
+
+model Pir {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  roomNum Int
+  time    Int
+  value   Float
+}
+
+model Temp {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  roomNum Int
+  time    Int
+  value   Float
+}
